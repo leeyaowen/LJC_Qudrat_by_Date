@@ -19,10 +19,11 @@ nDate<-nrow(distinct(dt,Date))
 p<-ggplot(dt,aes(x4,y4))+
   geom_point(color="grey40",size=0.5)+
   coord_fixed()+
-  scale_x_continuous(breaks = seq(0,300,10))+
-  scale_y_continuous(breaks = seq(0,220,10))+
+  scale_x_continuous(breaks = seq(0,300,10),expand = c(0,2))+
+  scale_y_continuous(breaks = seq(0,220,10),expand = c(0,2))+
   theme(panel.grid.minor = element_line(colour = "white"),
-        axis.text = element_text(size = 4.5),
-        axis.title = element_text(size = 4.5))+
+        axis.text = element_text(size = 5),
+        axis.title = element_text(size = 5))+
   transition_manual(frames = Date,cumulative = TRUE)
-animate(p, nframes = nDate,fps = 10, width=2000, height=2000, res=300, renderer = gifski_renderer("ljcdate.gif"))
+animate(p, nframes = nDate,fps = 10, width=2000, height=2000, res=300,
+        renderer = gifski_renderer("ljcdate.gif"))
