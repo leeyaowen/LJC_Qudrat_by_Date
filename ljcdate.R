@@ -6,8 +6,8 @@ library(gifski)
 library(png)
 
 # data join ----
-dtdate<-read.csv("./¶i«×µn°Oªí.csv")
-db<-read.csv("./ÆV¤¯·ËÂI¦ì.csv")
+dtdate<-read.csv("./é€²åº¦ç™»è¨˜è¡¨.csv")
+db<-read.csv("./æ¬–ä»æºªé»žä½.csv")
 dtdate<-mutate(dtdate,x1y1x2y2=paste0(X1,Y1,X2,Y2))
 db<-mutate(db,x1y1x2y2=paste0(x1,y1,x2,y2))
 dt<-left_join(db,dtdate,by="x1y1x2y2") %>%
